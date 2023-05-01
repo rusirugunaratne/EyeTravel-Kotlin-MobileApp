@@ -18,13 +18,13 @@
         app:layout_constraintVertical_bias="0.921">
 
         <Button
-            android:id="@+id/btn_openl_register"
+            android:id="@+id/btn_main_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login" />
 
         <Button
-            android:id="@+id/btn_openl_login"
+            android:id="@+id/btn_main_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Register" />
