@@ -23,5 +23,11 @@ class AdminActivity : AppCompatActivity() {
             val intent = Intent(this, AdminGuidesActivity::class.java)
             startActivity(intent)
         }
+
+        val profileButton = findViewById<Button>(R.id.btn_admin_profile)
+        profileButton.setOnClickListener{
+            val intent = Intent(this, AdminProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
