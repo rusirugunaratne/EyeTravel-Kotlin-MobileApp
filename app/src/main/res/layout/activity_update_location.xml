@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.AddLocationsActivity">
+    tools:context=".admin.UpdateLocationActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout5"
@@ -23,11 +23,11 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Location"
+            android:text="Update Location"
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/admin_add_placeName"
+            android:id="@+id/admin_update_placeName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -35,7 +35,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/admin_add_location"
+            android:id="@+id/admin_update_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -43,7 +43,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/admin_add_locaitonDescription"
+            android:id="@+id/admin_update_locationDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -51,7 +51,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/admin_add_locationImageUrl"
+            android:id="@+id/admin_update_locationImageUrl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -59,11 +59,11 @@
             android:inputType="textPersonName" />
 
         <Button
-            android:id="@+id/btn_admin_addLocation"
+            android:id="@+id/btn_admin_updateLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save Location"
-            app:icon="@drawable/ic_baseline_add_location_alt_24" />
+            android:text="Update Location"
+            app:icon="@drawable/ic_baseline_location_on_24" />
     </LinearLayout>
 
     <ImageView
@@ -75,6 +75,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/add_location"
-        tools:ignore="MissingConstraints" />
+        app:srcCompat="@drawable/add_location" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

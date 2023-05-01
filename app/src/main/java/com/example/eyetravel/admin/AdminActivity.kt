@@ -17,5 +17,11 @@ class AdminActivity : AppCompatActivity() {
             val intent = Intent(this, AdminLocationsActivity::class.java)
             startActivity(intent)
         }
+
+        val guidesButton = findViewById<Button>(R.id.btn_admin_guides)
+        locationsButton.setOnClickListener{
+            val intent = Intent(this, AdminGuidesActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

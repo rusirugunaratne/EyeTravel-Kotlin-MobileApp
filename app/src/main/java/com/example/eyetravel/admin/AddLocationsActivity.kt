@@ -34,8 +34,7 @@ class AddLocationsActivity : AppCompatActivity() {
         saveLocation.setOnClickListener{
             Log.d("appMe", "btn clicked")
             saveLocation()
-            val intent = Intent(this, AdminLocationsActivity::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
 
     }
