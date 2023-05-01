@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:ignore="ExtraText">
 
     <ImageView
-        android:id="@+id/admin_location_imageView"
+        android:id="@+id/admin_guide_imageView"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginStart="20dp"
@@ -17,54 +17,61 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" /><![CDATA[/>
 
+
+
+
+
+
+
+
+
     ]]>
 
     <TextView
-        android:id="@+id/txt_admin_placeName"
+        android:id="@+id/txt_admin_guideName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="140dp"
-        android:text="Place Name"
+        android:text="Guide Name"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
-        app:layout_constraintStart_toEndOf="@+id/admin_location_imageView"
+        app:layout_constraintStart_toEndOf="@+id/admin_guide_imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txt_admin_placeDescription"
+        android:id="@+id/txt_admin_guideEmail"
         android:layout_width="226dp"
         android:layout_height="86dp"
         android:layout_marginStart="140dp"
         android:layout_marginTop="64dp"
-        android:text="Place Description"
+        android:text="Guide Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/admin_location_imageView"
+        app:layout_constraintStart_toStartOf="@+id/admin_guide_imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_admin_location_update"
+        android:id="@+id/btn_admin_guide_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
         android:text="Update"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/admin_location_imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/admin_guide_imageView"
+        tools:ignore="UnknownIdInLayout" />
 
     <Button
-        android:id="@+id/btn_admin_locationDelete"
+        android:id="@+id/btn_admin_guideDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:text="Delete"
         app:iconTint="#FF0000"
         app:iconTintMode="add"
-        app:layout_constraintStart_toStartOf="@+id/btn_admin_location_update"
-        app:layout_constraintTop_toTopOf="@+id/txt_admin_placeName" />
+        app:layout_constraintStart_toEndOf="@+id/btn_admin_guide_update"
+        app:layout_constraintTop_toBottomOf="@+id/admin_guide_imageView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
