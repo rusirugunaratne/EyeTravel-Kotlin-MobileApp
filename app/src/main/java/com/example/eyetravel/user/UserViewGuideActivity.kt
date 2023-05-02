@@ -1,14 +1,17 @@
 package com.example.eyetravel.user
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.example.eyetravel.R
 import com.example.eyetravel.models.GuideModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
+
 
 class UserViewGuideActivity : AppCompatActivity() {
     private lateinit var dbRef: DatabaseReference
@@ -42,7 +45,13 @@ class UserViewGuideActivity : AppCompatActivity() {
 
         val bookNow = findViewById<Button>(R.id.user_book_guide_main)
         bookNow.setOnClickListener{
-            onBackPressed()
+
+        }
+
+        val call = findViewById<Button>(R.id.btnCall)
+        call.setOnClickListener{
+            val callIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${intent.getStringExtra("phone")}"))
+            startActivity(callIntent)
         }
     }
 
