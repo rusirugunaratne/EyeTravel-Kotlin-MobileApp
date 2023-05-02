@@ -30,21 +30,21 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/btn_admin_locations"
+            android:id="@+id/btn_user_locations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Locations"
             app:icon="@drawable/ic_baseline_location_on_24" />
 
         <Button
-            android:id="@+id/btn_admin_guides"
+            android:id="@+id/btn_user_guides"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Guides"
             app:icon="@drawable/ic_baseline_supervised_user_circle_24" />
 
         <Button
-            android:id="@+id/btn_admin_profile"
+            android:id="@+id/btn_user_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Profile"

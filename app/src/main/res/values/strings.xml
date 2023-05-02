@@ -2,4 +2,5 @@
     <string name="app_name">EyeTravel</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mapLocation">Location on Map</string>
 </resources>

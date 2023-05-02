@@ -42,7 +42,7 @@ class RegisterActivity : AppCompatActivity() {
         signUpButton.setOnClickListener{
             Log.d("appMe", "btn clicked")
 //            saveUser()
-            val intent = Intent(this, AdminActivity::class.java)
+            val intent = Intent(this, UserActivity::class.java)
             startActivity(intent)
         }
     }

@@ -13,6 +13,20 @@
         android:theme="@style/Theme.EyeTravel"
         tools:targetApi="31">
         <activity
+            android:name=".user.UserViewLocationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".user.UserLocationsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".admin.AdminProfileActivity"
             android:exported="false">
             <meta-data
