@@ -50,7 +50,8 @@ class AddGuideActivity : AppCompatActivity() {
 
         val guideId = dbRef.push().key!!
 
-        val guide = GuideModel(guideId, name, email, phone, age, imageUrl, additionalDetails)
+        val rate = 0
+        val guide = GuideModel(guideId, name, email, phone, age, imageUrl, additionalDetails, rate.toFloat())
 
         dbRef.child(guideId).setValue(guide).addOnCompleteListener{
             Toast.makeText(this, "Guide Added Successfully", Toast.LENGTH_LONG).show()

@@ -27,7 +27,7 @@ class UserActivity : AppCompatActivity() {
 
         val guidesButton = findViewById<Button>(R.id.btn_user_guides)
         guidesButton.setOnClickListener{
-            val intent = Intent(this, AdminGuidesActivity::class.java)
+            val intent = Intent(this, UserGuidesActivity::class.java)
             startActivity(intent)
         }
 

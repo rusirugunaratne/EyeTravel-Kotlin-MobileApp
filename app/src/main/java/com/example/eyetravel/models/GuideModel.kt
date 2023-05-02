@@ -8,4 +8,5 @@ data class GuideModel(
     var age: Int? = null,
     var imageUrl: String? = null,
     var additionalDetails: String? = null,
+    var rating: Float? = null
 )
