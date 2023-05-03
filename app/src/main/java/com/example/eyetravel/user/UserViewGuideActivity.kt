@@ -43,9 +43,15 @@ class UserViewGuideActivity : AppCompatActivity() {
 
         etRating.setOnRatingBarChangeListener{_, rating, _ -> updateGuide(rating)}
 
+        val guideId = intent.getStringExtra("guideId")
+        val guideName = intent.getStringExtra("name")
+
         val bookNow = findViewById<Button>(R.id.user_book_guide_main)
         bookNow.setOnClickListener{
-
+            val intent = Intent(this, BookGuideActivity::class.java)
+            intent.putExtra("guideId", guideId)
+            intent.putExtra("guideName", guideName)
+            startActivity(intent)
         }
 
         val call = findViewById<Button>(R.id.btnCall)
@@ -60,7 +66,7 @@ class UserViewGuideActivity : AppCompatActivity() {
         etEmail.text = Editable.Factory.getInstance().newEditable(intent.getStringExtra("email"))
         etPhone.text = Editable.Factory.getInstance().newEditable(intent.getStringExtra("phone"))
         Picasso.get().load(intent.getStringExtra("imageUrl")).into(etImageUrl)
-        etAge.text = Editable.Factory.getInstance().newEditable(intent.getIntExtra("age", 0).toString())
+        etAge.text = Editable.Factory.getInstance().newEditable(intent.getIntExtra("age", 0).toString() + " Years Old")
         etAdditionalDetails.text = Editable.Factory.getInstance().newEditable(intent.getStringExtra("additionalDetails"))
         val rt = 0
         etRating.rating = intent.getFloatExtra("rating", rt.toFloat()).toFloat()
