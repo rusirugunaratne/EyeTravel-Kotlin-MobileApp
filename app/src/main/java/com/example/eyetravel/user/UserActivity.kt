@@ -31,9 +31,15 @@ class UserActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+//        val profileButton = findViewById<Button>(R.id.btn_user_profile)
+//        profileButton.setOnClickListener{
+//            val intent = Intent(this, UserProfileActivity::class.java)
+//            startActivity(intent)
+//        }
+
         val profileButton = findViewById<Button>(R.id.btn_user_profile)
         profileButton.setOnClickListener{
-            val intent = Intent(this, AdminProfileActivity::class.java)
+            val intent = Intent(this, PaymentSuccessfulActivity::class.java)
             startActivity(intent)
         }
     }

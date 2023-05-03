@@ -1,7 +1,4 @@
 package com.example.eyetravel.user
-
-import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -14,7 +11,7 @@ class PaymentSuccessfulActivity : AppCompatActivity() {
 
         val downloadReceipt = findViewById<Button>(R.id.btn_download_receipt)
         downloadReceipt.setOnClickListener{
-
+            generatePdf()
         }
 
         val donePayment = findViewById<Button>(R.id.btn_done_payment)
@@ -24,6 +21,6 @@ class PaymentSuccessfulActivity : AppCompatActivity() {
     }
 
     private fun generatePdf () {
-        
+
     }
 }
