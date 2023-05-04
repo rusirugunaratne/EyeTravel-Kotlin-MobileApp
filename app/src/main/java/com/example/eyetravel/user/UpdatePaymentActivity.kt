@@ -77,6 +77,8 @@ class UpdatePaymentActivity : AppCompatActivity() {
         val amount = etAmount.text.toString().toDouble()
         val paymentId = intent.getStringExtra("paymentId")
 
+        dbRef = FirebaseDatabase.getInstance().getReference("Payments/$paymentId")
+
         val paymentModel = PaymentModel(paymentId, guideId, guideName, firstName, lastName, email, contactNumber, address, placesToVisit, amount)
 
         dbRef.setValue(paymentModel)

@@ -19,6 +19,8 @@ class UserActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.user_layout)
 
+        val userId = intent.getStringExtra("userId")
+
         val locationsButton = findViewById<Button>(R.id.btn_user_locations)
         locationsButton.setOnClickListener{
             val intent = Intent(this, UserLocationsActivity::class.java)
@@ -31,16 +33,17 @@ class UserActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        val profileButton = findViewById<Button>(R.id.btn_user_profile)
-//        profileButton.setOnClickListener{
-//            val intent = Intent(this, UserProfileActivity::class.java)
-//            startActivity(intent)
-//        }
-
         val profileButton = findViewById<Button>(R.id.btn_user_profile)
         profileButton.setOnClickListener{
-            val intent = Intent(this, PaymentSuccessfulActivity::class.java)
+            val intent = Intent(this, UserProfileActivity::class.java)
+            intent.putExtra("userId", userId)
             startActivity(intent)
         }
+
+//        val profileButton = findViewById<Button>(R.id.btn_user_profile)
+//        profileButton.setOnClickListener{
+//            val intent = Intent(this, PaymentSuccessfulActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 }

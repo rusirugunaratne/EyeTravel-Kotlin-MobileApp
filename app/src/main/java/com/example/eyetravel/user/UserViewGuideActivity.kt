@@ -66,7 +66,7 @@ class UserViewGuideActivity : AppCompatActivity() {
         etEmail.text = Editable.Factory.getInstance().newEditable(intent.getStringExtra("email"))
         etPhone.text = Editable.Factory.getInstance().newEditable(intent.getStringExtra("phone"))
         Picasso.get().load(intent.getStringExtra("imageUrl")).into(etImageUrl)
-        etAge.text = Editable.Factory.getInstance().newEditable(intent.getIntExtra("age", 0).toString() + " Years Old")
+        etAge.text = Editable.Factory.getInstance().newEditable(intent.getIntExtra("age", 0).toString() + " YearsOld")
         etAdditionalDetails.text = Editable.Factory.getInstance().newEditable(intent.getStringExtra("additionalDetails"))
         val rt = 0
         etRating.rating = intent.getFloatExtra("rating", rt.toFloat()).toFloat()
@@ -77,7 +77,7 @@ class UserViewGuideActivity : AppCompatActivity() {
         val name = etName.text.toString()
         val email = etEmail.text.toString()
         val phone = etPhone.text.toString()
-        val age = etAge.text.toString().toInt()
+        val age = etAge.text.split(" ")[0].toString().toInt()
         val imageUrl = intent.getStringExtra("imageUrl")
         val additionalDetails = etAdditionalDetails.text.toString()
 

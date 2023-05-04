@@ -40,10 +40,8 @@ class RegisterActivity : AppCompatActivity() {
 
         val signUpButton = findViewById<Button>(R.id.btn_signup)
         signUpButton.setOnClickListener{
-            Log.d("appMe", "btn clicked")
-//            saveUser()
-            val intent = Intent(this, UserActivity::class.java)
-            startActivity(intent)
+            saveUser()
+
         }
     }
 
@@ -71,6 +69,11 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "Error ${err.message} ", Toast.LENGTH_LONG).show()
             Log.d("appMe", "${err.message}")
         }
+
+        val intent = Intent(this, UserActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.putExtra("userId", userId)
+        startActivity(intent)
 
     }
 
