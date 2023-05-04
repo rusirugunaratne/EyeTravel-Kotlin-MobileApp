@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import com.example.eyetravel.R
@@ -36,6 +37,7 @@ class PaymentSuccessfulActivity : AppCompatActivity() {
         val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clipData = ClipData.newPlainText("text", paymentId)
         clipboardManager.setPrimaryClip(clipData)
+        Log.d("id", paymentId.toString())
         Toast.makeText(this, "Text copied to clipboard", Toast.LENGTH_LONG).show()
     }
 }

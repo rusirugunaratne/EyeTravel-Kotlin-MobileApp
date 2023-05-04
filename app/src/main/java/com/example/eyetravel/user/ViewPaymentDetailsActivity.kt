@@ -58,6 +58,7 @@ class ViewPaymentDetailsActivity : AppCompatActivity() {
         payNow.setOnClickListener {
             finish()
             val intent = Intent(this, CardDetailsActivity::class.java)
+            intent.putExtra("paymentId", paymentId)
             startActivity(intent)
         }
 
