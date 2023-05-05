@@ -81,7 +81,8 @@
         </activity>
         <activity
             android:name=".user.UserLocationsActivity"
-            android:exported="false">
+            android:windowSoftInputMode="adjustNothing"
+        android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

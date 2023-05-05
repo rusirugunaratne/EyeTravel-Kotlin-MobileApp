@@ -15,7 +15,7 @@ import com.example.eyetravel.models.LocationModel
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 
-class UserLocationAdapter (private val locationsList: ArrayList<LocationModel>): RecyclerView.Adapter<UserLocationAdapter.MyViewHolder>() {
+class UserLocationAdapter (private var locationsList: ArrayList<LocationModel>): RecyclerView.Adapter<UserLocationAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.user_location_item, parent, false)
@@ -41,6 +41,11 @@ class UserLocationAdapter (private val locationsList: ArrayList<LocationModel>):
 
     override fun getItemCount(): Int {
         return locationsList.size
+    }
+
+    fun updateList(list: List<LocationModel>) {
+        locationsList = list as ArrayList<LocationModel>
+        notifyDataSetChanged()
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
