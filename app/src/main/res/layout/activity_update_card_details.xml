@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user.CardDetailsActivity">
+    tools:context=".user.UpdateCardDetailsActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout8"
@@ -29,11 +29,11 @@
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Card Details"
+            android:text="Update Details"
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/add_card_number"
+            android:id="@+id/update_card_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -41,7 +41,7 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/add_card_expiry_date"
+            android:id="@+id/update_card_expiry_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -49,7 +49,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/add_card_code"
+            android:id="@+id/update_card_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -57,10 +57,11 @@
             android:inputType="number" />
 
         <Button
-            android:id="@+id/btn_pay_now"
+            android:id="@+id/update_card_pay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="View Card Details"
-            app:icon="@drawable/ic_baseline_visibility_24" />
+            android:text="Proceed To Pay"
+            app:icon="@drawable/ic_baseline_attach_money_24" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
