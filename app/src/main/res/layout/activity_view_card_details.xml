@@ -63,7 +63,7 @@
             android:id="@+id/view_card_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FF8400"
+            android:backgroundTint="#437290"
             android:text="Edit" />
 
         <Button
@@ -78,6 +78,7 @@
             android:id="@+id/view_card_pay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
             android:text="Make Payment"
             app:icon="@drawable/ic_baseline_attach_money_24" />
     </LinearLayout>

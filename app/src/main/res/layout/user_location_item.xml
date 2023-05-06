@@ -52,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="232dp"
         android:layout_marginTop="92dp"
+        android:backgroundTint="#2196F3"
         android:text="View"
         app:icon="@drawable/ic_baseline_visibility_24"
         app:layout_constraintStart_toStartOf="@+id/user_location_imageView"

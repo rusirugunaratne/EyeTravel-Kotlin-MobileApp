@@ -110,6 +110,7 @@
             android:id="@+id/btn_proceed_to_pay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
             android:text="Update and Proceed to Pay"
             app:icon="@drawable/ic_baseline_attach_money_24" />
 

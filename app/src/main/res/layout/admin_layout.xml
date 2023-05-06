@@ -33,6 +33,7 @@
             android:id="@+id/btn_admin_locations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
             android:text="Locations"
             app:icon="@drawable/ic_baseline_location_on_24" />
 
@@ -40,6 +41,7 @@
             android:id="@+id/btn_admin_guides"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
             android:text="Guides"
             app:icon="@drawable/ic_baseline_supervised_user_circle_24" />
 
@@ -47,6 +49,7 @@
             android:id="@+id/btn_admin_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#437290"
             android:text="Profile"
             app:icon="@drawable/ic_baseline_account_circle_24" />
     </LinearLayout>

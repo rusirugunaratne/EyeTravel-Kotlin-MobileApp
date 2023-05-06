@@ -60,6 +60,7 @@
             android:id="@+id/btn_pay_now"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
             android:text="View Card Details"
             app:icon="@drawable/ic_baseline_visibility_24" />
     </LinearLayout>

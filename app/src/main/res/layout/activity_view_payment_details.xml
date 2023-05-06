@@ -117,7 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#FF8400"
+                android:backgroundTint="#018786"
                 android:text="Update" />
 
             <Space
@@ -139,6 +139,7 @@
             android:id="@+id/ptn_pay_pay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
             android:text="Pay"
             app:icon="@drawable/ic_baseline_attach_money_24" />
     </LinearLayout>

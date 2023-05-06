@@ -78,6 +78,7 @@
             android:id="@+id/btn_admin_updateGuideMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
             android:text="Update Guide"
             app:icon="@drawable/ic_baseline_person_add_alt_1_24" />
     </LinearLayout>

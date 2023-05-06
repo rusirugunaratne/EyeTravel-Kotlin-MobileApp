@@ -43,7 +43,7 @@ class RegisterActivity : AppCompatActivity() {
             if(fName.text.toString() == "" || lName.text.toString() == "" || coutry.text.toString() == "" || email.text.toString() == "" || password.text.toString() == "" || passwordConfirm.text.toString() == ""){
                 Toast.makeText(this, "All fields required", Toast.LENGTH_LONG).show()
             }else{
-                if(password.text.toString() !== passwordConfirm.text.toString()){
+                if(password.text.toString() != passwordConfirm.text.toString()){
                     password.error = "Passwords Not Matching"
                     passwordConfirm.error = "Passwords Not Matching"
                     Toast.makeText(this, "Passwords not matching", Toast.LENGTH_LONG).show()
@@ -73,8 +73,7 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "Error ${err.message} ", Toast.LENGTH_LONG).show()
         }
 
-        val intent = Intent(this, UserActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        val intent = Intent(this, LoginActivity::class.java)
         intent.putExtra("userId", userId)
         startActivity(intent)
 

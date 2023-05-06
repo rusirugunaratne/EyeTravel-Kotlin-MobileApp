@@ -21,13 +21,14 @@
             android:id="@+id/btn_main_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
             android:text="Login" />
 
         <Button
             android:id="@+id/btn_main_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FF8400"
+            android:backgroundTint="#437290"
             android:text="Register" />
     </LinearLayout>
 
