@@ -1,5 +1,6 @@
 package com.example.eyetravel.admin
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.Intent.getIntent
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eyetravel.R
 import com.example.eyetravel.models.GuideModel
@@ -27,7 +29,7 @@ class AdminGuideAdapter(private val guidesList: ArrayList<GuideModel>): Recycler
         holder.name.text = currentItem.name
         holder.email.text = currentItem.email
         holder.deleteButton.setOnClickListener {v->
-            currentItem.guideId?.let { it1 -> deleteGuide(it1) }
+            currentItem.guideId?.let { it1 -> deleteGuide(it1, v) }
         }
 
         holder.updateButton.setOnClickListener {v->
@@ -44,9 +46,19 @@ class AdminGuideAdapter(private val guidesList: ArrayList<GuideModel>): Recycler
         }
     }
 
-    private fun deleteGuide(guideId: String){
-        val dbRef = FirebaseDatabase.getInstance().getReference("Guides").child(guideId)
-        val mTask = dbRef.removeValue()
+    private fun deleteGuide(guideId: String, v : View){
+        val builder = AlertDialog.Builder(v.context)
+        builder.setMessage("Are you sure you want to delete this item?")
+            .setCancelable(false)
+            .setPositiveButton("Yes") { dialog, id ->
+                val dbRef = FirebaseDatabase.getInstance().getReference("Guides").child(guideId)
+                val mTask = dbRef.removeValue()
+            }
+            .setNegativeButton("No") { dialog, id ->
+                Toast.makeText(v.context, "Not Deleted", Toast.LENGTH_LONG).show()
+            }
+        val alert = builder.create()
+        alert.show()
     }
 
     override fun getItemCount(): Int {

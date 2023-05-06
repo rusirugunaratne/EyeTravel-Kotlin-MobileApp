@@ -55,6 +55,7 @@
             android:id="@+id/btn_done_payment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#FF8400"
             android:text="Done" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

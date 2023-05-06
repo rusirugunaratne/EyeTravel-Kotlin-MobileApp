@@ -32,7 +32,6 @@ class AddLocationsActivity : AppCompatActivity() {
 
         val saveLocation = findViewById<Button>(R.id.btn_admin_addLocation)
         saveLocation.setOnClickListener{
-            Log.d("appMe", "btn clicked")
             saveLocation()
             onBackPressed()
         }
@@ -45,16 +44,18 @@ class AddLocationsActivity : AppCompatActivity() {
         val description = etDescription.text.toString()
         val imageUrl = etImageUrl.text.toString()
 
-        val locationId = dbRef.push().key!!
+        if(name == "" || location == "" || description == "" || imageUrl == null){
+            Toast.makeText(this, "All fields required", Toast.LENGTH_LONG).show()
+        }else{
+            val locationId = dbRef.push().key!!
 
-        val locationModel = LocationModel(locationId,name,location,description,imageUrl)
+            val locationModel = LocationModel(locationId,name,location,description,imageUrl)
 
-        dbRef.child(locationId).setValue(locationModel).addOnCompleteListener{
-            Toast.makeText(this, "Location Added Successfully", Toast.LENGTH_LONG).show()
-            Log.d("appMe", "success")
-        }.addOnFailureListener { err->
-            Toast.makeText(this, "Error ${err.message} ", Toast.LENGTH_LONG).show()
-            Log.d("appMe", "${err.message}")
+            dbRef.child(locationId).setValue(locationModel).addOnCompleteListener{
+                Toast.makeText(this, "Location Added Successfully", Toast.LENGTH_LONG).show()
+            }.addOnFailureListener { err->
+                Toast.makeText(this, "Error ${err.message} ", Toast.LENGTH_LONG).show()
+            }
         }
     }
 }

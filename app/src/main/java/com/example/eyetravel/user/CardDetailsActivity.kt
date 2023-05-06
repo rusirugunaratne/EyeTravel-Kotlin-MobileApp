@@ -11,6 +11,7 @@ import com.example.eyetravel.models.CardModel
 import com.example.eyetravel.models.PaymentModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import kotlin.math.exp
 
 class CardDetailsActivity : AppCompatActivity() {
     private lateinit var dbRef: DatabaseReference
@@ -54,14 +55,18 @@ class CardDetailsActivity : AppCompatActivity() {
         val expiryDate = etExpiryDate.text.toString()
         val code = etCode.text.toString()
 
-        cardId = dbRef.push().key!!
-
-        val cardModel = CardModel(cardId, cardNumber, expiryDate, code)
-
-        dbRef.child(cardId).setValue(cardModel).addOnCompleteListener{
-            Toast.makeText(this, "Card Details Saved", Toast.LENGTH_LONG).show()
-        }.addOnFailureListener { err->
-            Toast.makeText(this, "Error ${err.message} ", Toast.LENGTH_LONG).show()
+        if (cardNumber == "" || expiryDate == "" || code == ""){
+            Toast.makeText(this, "All fields required", Toast.LENGTH_LONG).show()
+        }else{
+            cardId = dbRef.push().key!!
+            val cardModel = CardModel(cardId, cardNumber, expiryDate, code)
+            dbRef.child(cardId).setValue(cardModel).addOnCompleteListener{
+                Toast.makeText(this, "Card Details Saved", Toast.LENGTH_LONG).show()
+            }.addOnFailureListener { err->
+                Toast.makeText(this, "Error ${err.message} ", Toast.LENGTH_LONG).show()
+            }
         }
+
+
     }
 }

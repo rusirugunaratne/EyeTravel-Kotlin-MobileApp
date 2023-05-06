@@ -7,6 +7,7 @@ import android.text.Editable
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.example.eyetravel.R
 import com.example.eyetravel.models.CardModel
 import com.example.eyetravel.models.PaymentModel
@@ -52,13 +53,13 @@ class UpdateCardDetailsActivity : AppCompatActivity() {
         val expiryDate = etExpiryDate.text.toString()
         val code = etCode.text.toString()
 
-        val cardId = intent.getStringExtra("cardId")
-
-        dbRef = FirebaseDatabase.getInstance().getReference("Cards/$cardId")
-
-        val cardModel = CardModel(cardId, cardNumber, expiryDate, code)
-
-        dbRef.setValue(cardModel)
-
+        if (cardNumber == "" || expiryDate == "" || code == ""){
+            Toast.makeText(this, "All fields required", Toast.LENGTH_LONG).show()
+        }else{
+            val cardId = intent.getStringExtra("cardId")
+            dbRef = FirebaseDatabase.getInstance().getReference("Cards/$cardId")
+            val cardModel = CardModel(cardId, cardNumber, expiryDate, code)
+            dbRef.setValue(cardModel)
+        }
     }
 }

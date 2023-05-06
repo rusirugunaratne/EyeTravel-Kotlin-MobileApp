@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.example.eyetravel.R
 import com.example.eyetravel.models.LocationModel
 import com.google.firebase.database.DatabaseReference
@@ -55,7 +56,11 @@ class UpdateLocationActivity : AppCompatActivity() {
         val description = etDescription.text.toString()
         val imageUrl = etImageUrl.text.toString()
 
-        val locationInfo = LocationModel(locationId, name, location, description, imageUrl)
-        dbRef.setValue(locationInfo)
+        if(name == "" || location == "" || description == "" || imageUrl == null){
+            Toast.makeText(this, "All fields required", Toast.LENGTH_LONG).show()
+        }else{
+            val locationInfo = LocationModel(locationId, name, location, description, imageUrl)
+            dbRef.setValue(locationInfo)
+        }
     }
 }

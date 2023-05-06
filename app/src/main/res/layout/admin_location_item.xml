@@ -62,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="136dp"
+        android:backgroundTint="#FF0000"
         android:text="Delete"
         app:iconTint="#FF0000"
         app:iconTintMode="add"

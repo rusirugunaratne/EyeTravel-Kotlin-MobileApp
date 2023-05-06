@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.example.eyetravel.R
 import com.example.eyetravel.models.PaymentModel
 import com.google.firebase.database.DatabaseReference
@@ -77,11 +78,12 @@ class UpdatePaymentActivity : AppCompatActivity() {
         val amount = etAmount.text.toString().toDouble()
         val paymentId = intent.getStringExtra("paymentId")
 
-        dbRef = FirebaseDatabase.getInstance().getReference("Payments/$paymentId")
-
-        val paymentModel = PaymentModel(paymentId, guideId, guideName, firstName, lastName, email, contactNumber, address, placesToVisit, amount)
-
-        dbRef.setValue(paymentModel)
-
+        if(guideId == "" || guideName == "" || firstName== "" || lastName== "" || email== "" || contactNumber== "" || address== "" || placesToVisit== null){
+            Toast.makeText(this, "All fields required", Toast.LENGTH_LONG).show()
+        }else{
+            dbRef = FirebaseDatabase.getInstance().getReference("Payments/$paymentId")
+            val paymentModel = PaymentModel(paymentId, guideId, guideName, firstName, lastName, email, contactNumber, address, placesToVisit, amount)
+            dbRef.setValue(paymentModel)
+        }
     }
 }

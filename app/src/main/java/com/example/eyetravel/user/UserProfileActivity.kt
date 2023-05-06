@@ -51,17 +51,21 @@ class UserProfileActivity : AppCompatActivity() {
     }
 
     private fun updatePayment() {
-
         val fName = etFname.text.toString()
         val lName = etLname.text.toString()
         val email = etEmail.text.toString()
         val country = etCountry.text.toString()
         val password = etPassword.text.toString()
         val userId = intent.getStringExtra("userId")
-        dbRef = FirebaseDatabase.getInstance().getReference("Users/$userId")
-        val userModel = UserModel(userId, fName, lName, country, email, password)
-        dbRef.setValue(userModel)
-        Toast.makeText(this, "Details Updated", Toast.LENGTH_LONG).show()
+
+        if(fName == "" || lName == "" || country == "" || email == "" || password == ""){
+            Toast.makeText(this, "All fields required", Toast.LENGTH_LONG).show()
+        }else{
+            dbRef = FirebaseDatabase.getInstance().getReference("Users/$userId")
+            val userModel = UserModel(userId, fName, lName, country, email, password)
+            dbRef.setValue(userModel)
+            Toast.makeText(this, "Details Updated", Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun addValues(){

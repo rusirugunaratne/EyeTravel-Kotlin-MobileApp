@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.example.eyetravel.R
 import com.example.eyetravel.models.GuideModel
 import com.example.eyetravel.models.LocationModel
@@ -64,10 +65,13 @@ class UpdateGuideActivity : AppCompatActivity() {
         val imageUrl = etImageUrl.text.toString()
         val additionalDetails = etAdditionalDetails.text.toString()
 
-        val rt = 0
-        val rating = intent.getFloatExtra("rating", rt.toFloat())
-        val guide = GuideModel(guideId, name, email, phone, age, imageUrl, additionalDetails, rating.toFloat())
-
-        dbRef.setValue(guide)
+        if(name == "" || email == "" || phone == "" || age == null || imageUrl == "" || additionalDetails == ""){
+            Toast.makeText(this, "All fields required", Toast.LENGTH_LONG).show()
+        }else{
+            val rt = 0
+            val rating = intent.getFloatExtra("rating", rt.toFloat())
+            val guide = GuideModel(guideId, name, email, phone, age, imageUrl, additionalDetails, rating.toFloat())
+            dbRef.setValue(guide)
+        }
     }
 }

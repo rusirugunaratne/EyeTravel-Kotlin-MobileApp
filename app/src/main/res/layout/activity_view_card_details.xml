@@ -63,12 +63,14 @@
             android:id="@+id/view_card_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#FF8400"
             android:text="Edit" />
 
         <Button
             android:id="@+id/view_card_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#FF0000"
             android:text="Delete Card"
             app:icon="@drawable/ic_baseline_delete_forever_24" />
 

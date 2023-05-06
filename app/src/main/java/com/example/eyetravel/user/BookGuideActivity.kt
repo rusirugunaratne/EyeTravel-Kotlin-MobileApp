@@ -75,15 +75,18 @@ class BookGuideActivity : AppCompatActivity() {
         val placesToVisit = etPlacesToVisit.text.toString()
         val amount = etAmount.text.toString().toDouble()
 
+        if(guideId == "" || guideName == "" || firstName== "" || lastName== "" || email== "" || contactNumber== "" || address== "" || placesToVisit== null){
+            Toast.makeText(this, "All fields required", Toast.LENGTH_LONG).show()
+        }else{
+            paymentId = dbRef.push().key!!
 
-        paymentId = dbRef.push().key!!
+            val paymentModel = PaymentModel(paymentId, guideId, guideName, firstName, lastName, email, contactNumber, address, placesToVisit, amount)
 
-        val paymentModel = PaymentModel(paymentId, guideId, guideName, firstName, lastName, email, contactNumber, address, placesToVisit, amount)
-
-        dbRef.child(paymentId).setValue(paymentModel).addOnCompleteListener{
-            Toast.makeText(this, "Payment Details Saved", Toast.LENGTH_LONG).show()
-        }.addOnFailureListener { err->
-            Toast.makeText(this, "Error ${err.message} ", Toast.LENGTH_LONG).show()
+            dbRef.child(paymentId).setValue(paymentModel).addOnCompleteListener{
+                Toast.makeText(this, "Payment Details Saved", Toast.LENGTH_LONG).show()
+            }.addOnFailureListener { err->
+                Toast.makeText(this, "Error ${err.message} ", Toast.LENGTH_LONG).show()
+            }
         }
     }
 }

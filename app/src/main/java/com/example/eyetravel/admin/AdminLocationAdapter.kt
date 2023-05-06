@@ -1,5 +1,6 @@
 package com.example.eyetravel.admin
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -30,8 +31,8 @@ class AdminLocationAdapter (private val locationsList: ArrayList<LocationModel>)
         Picasso.get().load(currentItem.imageUrl).into(holder.image)
         holder.name.text = currentItem.name
         holder.description.text = currentItem.description
-        holder.deleteButton.setOnClickListener {
-            currentItem.locationId?.let { it1 -> deleteLocation(it1) }
+        holder.deleteButton.setOnClickListener {v ->
+            currentItem.locationId?.let { it1 -> deleteLocation(it1, v) }
         }
 
         holder.updateButton.setOnClickListener {v->
@@ -46,9 +47,19 @@ class AdminLocationAdapter (private val locationsList: ArrayList<LocationModel>)
         }
     }
 
-    private fun deleteLocation(locationId: String){
-        val dbRef = FirebaseDatabase.getInstance().getReference("Locations").child(locationId)
-        val mTask = dbRef.removeValue()
+    private fun deleteLocation(locationId: String, v: View){
+        val builder = AlertDialog.Builder(v.context)
+        builder.setMessage("Are you sure you want to delete this item?")
+            .setCancelable(false)
+            .setPositiveButton("Yes") { dialog, id ->
+                val dbRef = FirebaseDatabase.getInstance().getReference("Locations").child(locationId)
+                val mTask = dbRef.removeValue()
+            }
+            .setNegativeButton("No") { dialog, id ->
+                Toast.makeText(v.context, "Not Deleted", Toast.LENGTH_LONG).show()
+            }
+        val alert = builder.create()
+        alert.show()
     }
 
     override fun getItemCount(): Int {

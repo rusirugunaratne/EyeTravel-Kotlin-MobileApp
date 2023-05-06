@@ -48,15 +48,19 @@ class AddGuideActivity : AppCompatActivity() {
         val imageUrl = etImageUrl.text.toString()
         val additionalDetails = etAdditionalDetails.text.toString()
 
-        val guideId = dbRef.push().key!!
+        if(name == "" || email == "" || phone == "" || age == null || imageUrl == "" || additionalDetails == ""){
+            Toast.makeText(this, "All fields required", Toast.LENGTH_LONG).show()
+        }else{
+            val guideId = dbRef.push().key!!
 
-        val rate = 0
-        val guide = GuideModel(guideId, name, email, phone, age, imageUrl, additionalDetails, rate.toFloat())
+            val rate = 0
+            val guide = GuideModel(guideId, name, email, phone, age, imageUrl, additionalDetails, rate.toFloat())
 
-        dbRef.child(guideId).setValue(guide).addOnCompleteListener{
-            Toast.makeText(this, "Guide Added Successfully", Toast.LENGTH_LONG).show()
-        }.addOnFailureListener { err->
-            Toast.makeText(this, "Error ${err.message} ", Toast.LENGTH_LONG).show()
+            dbRef.child(guideId).setValue(guide).addOnCompleteListener{
+                Toast.makeText(this, "Guide Added Successfully", Toast.LENGTH_LONG).show()
+            }.addOnFailureListener { err->
+                Toast.makeText(this, "Error ${err.message} ", Toast.LENGTH_LONG).show()
+            }
         }
     }
 }

@@ -101,6 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:layout_marginTop="16dp"
+        android:backgroundTint="#FF8400"
         android:text="Call"
         app:icon="@drawable/ic_baseline_add_ic_call_24"
         app:layout_constraintStart_toStartOf="parent"

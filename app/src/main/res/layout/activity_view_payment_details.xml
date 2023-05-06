@@ -117,6 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#FF8400"
                 android:text="Update" />
 
             <Space
@@ -129,6 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#FF0000"
                 android:text="Delete"
                 app:icon="@drawable/ic_baseline_delete_forever_24" />
         </LinearLayout>
